@@ -1,18 +1,12 @@
 from flask import Flask
-import threading
-from Extractor import __main__  # मान लेते हैं कि bot यहाँ से start होता है
+import os
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route("/")
 def home():
-    return "Bot is running fine ✅"
-
-def run_bot():
-    __main__.main()   # जहाँ से bot start होता है, वही function call करो
+    return "Bot is running ✅"
 
 if __name__ == "__main__":
-    # bot को अलग thread में चलाओ
-    threading.Thread(target=run_bot).start()
-    # साथ में HTTP server भी चलेगा
-    app.run(host="0.0.0.0", port=10000)
+    port = int(os.environ.get("PORT", 10000))  # Render automatically port assign karega
+    app.run(host="0.0.0.0", port=port)
