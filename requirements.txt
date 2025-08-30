@@ -17,6 +17,8 @@ httpx
 python-telegram-bot==20.6
 tqdm
 colorama
+flask
+
 termcolor
 dotenv
 
