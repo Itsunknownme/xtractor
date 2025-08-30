@@ -1,22 +1,21 @@
-# Use official Python 3.10.11 image
+# Python 3.10.11 slim image use करो
 FROM python:3.10.11-slim
 
-# Set work directory
+# Working directory set करो
 WORKDIR /app
 
-# Install system dependencies (if needed, can be removed if not using any OS deps)
+# System dependencies install करो
 RUN apt-get update && apt-get install -y \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements (if you use one)
+# requirements.txt copy करो और install करो
 COPY requirements.txt .
-
-# Install Python dependencies
+RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy your code
+# बाकी code copy करो
 COPY . .
 
-# Run the Extractor module
-CMD ["sh", "-c", "python -m Extractor"]
+# Run करो Extractor module
+CMD ["python", "-m", "Extractor"]
