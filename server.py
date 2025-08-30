@@ -1,25 +1,34 @@
 from flask import Flask
-import threading
+import multiprocessing
 import os
+import signal
+import Extractor
 
-# Flask app
 app = Flask(__name__)
+bot_process = None
 
-# --- Extractor Bot Run Function ---
+# --- Run bot ---
 def run_bot():
-    import Extractor   # yahi tera main bot package hai
-    Extractor.main()   # uska entrypoint call kar
+    Extractor.main()
 
-# --- Routes ---
+# --- Flask route for UptimeRobot ---
 @app.route("/")
 def home():
-    return "Bot running ✅"
+    global bot_process
+    if bot_process is not None and bot_process.is_alive():
+        return "✅ Bot running"
+    else:
+        return "❌ Bot stopped"
 
-# --- Main ---
 if __name__ == "__main__":
-    # Bot background thread me run hoga
-    threading.Thread(target=run_bot, daemon=True).start()
-    
-    # Flask server foreground me run hoga
+    # Start bot process
+    bot_process = multiprocessing.Process(target=run_bot)
+    bot_process.start()
+
+    # Start flask server (UptimeRobot will ping this)
     port = int(os.environ.get("PORT", 10000))
-    app.run(host="0.0.0.0", port=port)
+    try:
+        app.run(host="0.0.0.0", port=port)
+    finally:
+        if bot_process is not None:
+            os.kill(bot_process.pid, signal.SIGTERM)
