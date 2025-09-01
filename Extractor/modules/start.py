@@ -112,7 +112,7 @@ button1 = [
                 ],
                 [
                     InlineKeyboardButton("⚠️ Vɪsɪᴏɴ Iᴀs", callback_data="vision_ias_"),
-                    InlineKeyboardButton("🧿 Rᴀɴᴋᴇʀs Gᴜʀᴜᴋᴜʟ", callback_data="rgvikram_txt")
+                    InlineKeyboardButton("🧿 Rᴀɴᴋᴇʀs Gᴜʀᴜᴋᴜʟ", callback_data="rgvikramjeet_")
                 ],
                 [
                     InlineKeyboardButton("𝐁 𝐀 𝐂 𝐊", callback_data="modes_")
