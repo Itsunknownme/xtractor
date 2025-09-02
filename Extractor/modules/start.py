@@ -292,9 +292,9 @@ async def start(_, message):
 
         loading_frames = [
             "🚀 Initializing System...\n【□□□□□□□□□□□□□□】 0%",
-            "🚀 Initializing System...\n【■■■■■□□□□□□□□□】 25%",
-            "🚀 Initializing System...\n【■■■■■■■■■□□□□□】 50%",
-            "🚀 Initializing System...\n【■■■■■■■■■■■■■■】 100%",
+            "🔍 Loading Modules...\n【■■■■■□□□□□□□□□】 25%",
+            "📡 Connecting Servers...\n【■■■■■■■■■□□□□□】 50%",
+            "✅ System Ready...\n【■■■■■■■■■■■■■■】 100%",
         ]
 
         for frame in loading_frames:
