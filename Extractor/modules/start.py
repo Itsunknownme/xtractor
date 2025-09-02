@@ -272,7 +272,7 @@ def photo():
     # Keeping the old code as comment for reference
 
 
-REACTIONS = ["🔥", "💥", "⚡", "✨", "😍", "🎉"]
+REACTIONS = ["👀", "😱", "🔥", "😍", "🎉", "🥰", "😇", "⚡", "💥", "🤩"]
 
 @app.on_message(filters.command("start"))  # & filters.user(SUDO_USERS))
 async def start(_, message):
