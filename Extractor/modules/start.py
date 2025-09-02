@@ -291,18 +291,20 @@ async def start(_, message):
         msg = await message.reply_text("🚀 Initializing System...")
 
         loading_frames = [
-            "🚀 Initializing System...\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 0%",
-            "🚀 Initializing System...\n██████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 25%",
-            "🚀 Initializing System...\n████████████▒▒▒▒▒▒▒▒▒▒ 50%",
-            "🚀 Initializing System...\n████████████████▒▒▒▒▒▒ 75%",
-            "🚀 Initializing System...\n██████████████████████ 100%",
+            "🚀 Initializing System...\n【□□□□□□□□□□□□】 0%",
+            "🚀 Initializing System...\n【■■■■□□□□□□□□】 25%",
+            "🚀 Initializing System...\n【■■■■■■■■□□□□】 50%",
+            "🚀 Initializing System...\n【■■■■■■■■■■■■】 75%",
+            "🚀 Initializing System...\n【■■■■■■■■■■■■■■■■】 100%",
         ]
 
         for frame in loading_frames:
             await asyncio.sleep(0.2)  # fast speed
             await msg.edit_text(frame)
 
-        await asyncio.sleep(0.2)  # thoda gap final msg se pehle
+        # last frame thoda dikhne ke baad delete
+        await asyncio.sleep(0.5)
+        await msg.delete()
 
     except Exception as e:
         print(f"Init animation error: {e}")
