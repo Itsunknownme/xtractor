@@ -33,7 +33,6 @@ from Extractor.modules.findapi import findapis_extract
 from Extractor.modules.rg_vikramjeet import rgvikramjeet
 from Extractor.modules.adda import adda_command_handler
 from Extractor.modules.vision import scrape_vision_ias
-from Extractor.modules.rg_vikramjeet import rgvikramjeet
 from Extractor.core.utils import forward_to_log
 from Extractor.modules.enc import *
 
@@ -114,7 +113,7 @@ button1 = [
                 ],
                 [
                     InlineKeyboardButton("⚠️ Vɪsɪᴏɴ Iᴀs", callback_data="vision_ias_"),
-                    InlineKeyboardButton("🧿 Rᴀɴᴋᴇʀs Gᴜʀᴜᴋᴜʟ", callback_data="rgvikramjeet_")
+                    InlineKeyboardButton("🧿 Rᴀɴᴋᴇʀs Gᴜʀᴜᴋᴜʟ", callback_data="rg_vikramjeet")
                 ],
                 [
                     InlineKeyboardButton("𝐁 𝐀 𝐂 𝐊", callback_data="modes_")
