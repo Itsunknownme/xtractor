@@ -306,28 +306,41 @@ async def start_cmd(_, message):
         print(f"Init animation error: {e}")
 
     # --- Alag alag block me messages ---
-    await message.reply_text(f"🌟 Welcome Dear {message.from_user.mention} !")
+    await message.reply_text(
+        f"<blockquote>🌟 Welcome Dear {message.from_user.mention} !</blockquote>",
+        parse_mode="html"
+    )
 
     await message.reply_text(f"""
+<blockquote>
 🔻 Your Profile Information 🔻
 🆔 ID : <code>{message.from_user.id}</code>
 👤 UserName : {message.from_user.username or "N/A"}
 🌐 DC ID : {getattr(message.from_user, 'dc_id', 'N/A')}
 ❄️ Frozen Status : False
 🎭 Scam Status : False
+</blockquote>
 """, parse_mode="html")
 
     await message.reply_text("""
+<blockquote>
 🎯 Get Started
 1️⃣ Hit /extract to view Supported Platforms.
 2️⃣ Select Your Platform Preference.
 3️⃣ Start Extracting Your Contents.
 4️⃣ Download using our Uploader Bots.
-""")
+</blockquote>
+""", parse_mode="html")
 
-    await message.reply_text("Want to get started? hit /jhosn to start your Extraction")
+    await message.reply_text(
+        "<blockquote>Want to get started? hit /extract to start your Extraction</blockquote>",
+        parse_mode="html"
+    )
 
-    await message.reply_text("⚠️ Note: Use for educational purposes only. Respect platform policies.")
+    await message.reply_text(
+        "<blockquote>⚠️ Note: Use for educational purposes only. Respect platform policies.</blockquote>",
+        parse_mode="html"
+    )
 
 
 @app.on_message(filters.command("extract"))  # & filters.user(SUDO_USERS))
