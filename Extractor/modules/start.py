@@ -3,6 +3,7 @@ import json
 import random
 import asyncio
 import os
+from pyrogram import filters, enums  
 import requests
 import aiohttp
 from concurrent.futures import ThreadPoolExecutor
@@ -274,10 +275,6 @@ REACTIONS = ["👀", "😱", "🔥", "😍", "🎉", "🥰", "😇", "⚡", "�
 
 @app.on_message(filters.command("start"))
 async def start_cmd(_, message):
-    join = await subscribe(_, message)
-    if join == 1:
-        return
-
     # Random emoji react
     try:
         await message.react(emoji=random.choice(REACTIONS), big=True)
@@ -308,7 +305,7 @@ async def start_cmd(_, message):
     # --- Messages in blocks ---
     await message.reply_text(
         f"<blockquote>🌟 Welcome Dear {message.from_user.mention} !</blockquote>",
-        parse_mode="html"
+        parse_mode=enums.ParseMode.HTML
     )
 
     await message.reply_text(f"""
@@ -320,7 +317,7 @@ async def start_cmd(_, message):
 ❄️ Frozen Status : False
 🎭 Scam Status : False
 </blockquote>
-""", parse_mode="html")
+""", parse_mode=enums.ParseMode.HTML)
 
     await message.reply_text("""
 <blockquote>
@@ -330,16 +327,16 @@ async def start_cmd(_, message):
 3️⃣ Start Extracting Your Contents.
 4️⃣ Download using our Uploader Bots.
 </blockquote>
-""", parse_mode="html")
+""", parse_mode=enums.ParseMode.HTML)
 
     await message.reply_text(
         "<blockquote>Want to get started? hit /extract to start your Extraction</blockquote>",
-        parse_mode="html"
+        parse_mode=enums.ParseMode.HTML
     )
 
     await message.reply_text(
         "<blockquote>⚠️ Note: Use for educational purposes only. Respect platform policies.</blockquote>",
-        parse_mode="html"
+        parse_mode=enums.ParseMode.HTML
     )
 
 
