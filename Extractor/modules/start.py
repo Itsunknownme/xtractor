@@ -18,7 +18,7 @@ from Extractor.core.func import subscribe, chk_user
 from Extractor.modules.appex_v1 import api_v1
 from Extractor.modules.appex_v2 import appex_v2_txt
 from Extractor.modules.appex_v3 import appex_v3_txt
-from Extractor.modules.appex_v4 import .appex_v4_txt
+from Extractor.modules.appex_v4 import appex_v4_txt
 from Extractor.modules.classplus import classplus_txt
 from Extractor.modules.pw import pw_login
 from Extractor.modules.exampur import exampur_txt
