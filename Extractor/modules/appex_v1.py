@@ -107,13 +107,14 @@ async def api_v1(bot, m, user):
     await input.delete(True)
     
     if "*" in raw_text:
-    	data["email"] = raw_text.split("*")[0]
-    	data["password"] = raw_text.split("*")[1]    
-    	scraper = cloudscraper.create_scraper()	
-    	html = scraper.post("https://"+raw_text05+"/post/userLogin",data,headers=login_hdr).content
-    	output = json.loads(html)
-     	token = output["data"]["token"]
-     	userid = output["data"]["userid"]
+        data["email"] = raw_text.split("*")[0]
+        data["password"] = raw_text.split("*")[1]
+        scraper = cloudscraper.create_scraper()
+        html = scraper.post("https://" + raw_text05 + "/post/userLogin", data, headers=login_hdr).content
+        output = json.loads(html)
+        token = output["data"]["token"]
+        userid = output["data"]["userid"]
+
     else:
         token = raw_text
         userid = jwt.decode(token, options={"verify_signature": False}).get('id')
