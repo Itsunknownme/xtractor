@@ -185,20 +185,20 @@ async def career_will(app: Client, message: Message):
         if "*" in raw_text:
             email, password = raw_text.split("*")
             headers = {
-                "Host": "elearn.crwilladmin.com",
-                "appver": "107",
-                "apptype": "android",
-                "cwkey": "+HwN3zs4tPU0p8BpOG5ZlXIU6MaWQmnMHXMJLLFcJ5m4kWqLXGLpsp8+2ydtILXy",
-                "content-type": "application/json; charset=UTF-8",
-                "accept-encoding": "gzip",
-                "user-agent": "okhttp/5.0.0-alpha.2"
+                "Host": "wbspec.crwilladmin.com",
+                "apptype": "web",
+                "cwkey": "qD931+RbpRM1cb6Gx3HfIwbg+VVOrIFn3+k0w/N2H/k=",
+                "content-type": "application/json",
+                "accept-encoding": "gzip, deflate, br, zstd",
+                "user-agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Mobile Safari/537.36"
             }
             data = {
-                "deviceType": "android",
-                "password": password,
-                "deviceModel": "Xiaomi M2007J20CI",
-                "deviceVersion": "Q(Android 10.0)",
-                "email": email,
+                "deviceType": "web",
+                "pwd": password,
+                "deviceModel": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Mobile Safari/537.36",
+                "deviceVersion": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Mobile Safari/537.36",
+                "userid": email,
+                "usertype": "2", 
                 "deviceIMEI": "d57adbd8a7b8u9i9",
                 "deviceToken": "fake_device_token"
             }
@@ -216,7 +216,7 @@ async def career_will(app: Client, message: Message):
 
         # Fetch Batches
         headers = {
-            "Host": "wbspec.crwilladmin.com",
+            "Host": "elearn.crwilladmin.com",
             "appver": "107",
             "apptype": "android",
             "usertype": "2",
