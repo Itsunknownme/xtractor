@@ -10,6 +10,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 from config import CHANNEL_ID,THUMB_URL,BOT_TEXT
 from Extractor import app
+import textwrap
 
 
 requests = cloudscraper.create_scraper()
