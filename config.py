@@ -4,34 +4,34 @@ from os import getenv
 
 
 # ------------------------------------------------
-API_ID = int(os.environ.get("API_ID", "29115102"))
+API_ID = int(os.environ.get("API_ID", ""))
 # ------------------------------------------------
 API_HASH = os.environ.get("API_HASH","")
 # ------------------------------------------------
 BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 # ------------------------------------------------
-BOT_USERNAME = os.environ.get("BOT_USERNAME", "ziddiextractorbot")
+BOT_USERNAME = os.environ.get("BOT_USERNAME", "")
 BOT_TEXT = "UG Extractor"
 # ------------------------------------------------
-OWNER_ID = int(os.environ.get("OWNER_ID", "1224092270"))
+OWNER_ID = int(os.environ.get("OWNER_ID", ""))
 # ------------------------------------------------
 # //LOG CHANNEL ID 
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002067304488"))
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", ""))
 
 # //FORCE_CHANNEL_ID
-CHANNEL_ID2 = int(os.environ.get("CHANNEL_ID2", "-4835078374")) 
+CHANNEL_ID2 = int(os.environ.get("CHANNEL_ID2", "")) 
 # ------------------------------------------------
-MONGO_URL = os.environ.get("MONGO_URL", "mongodb+srv://ankush23:JYzSGlbjpFezDSWH@cluster0.ulzzd1m.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+MONGO_URL = os.environ.get("MONGO_URL", "")
 # -----------------------------------------------
-PREMIUM_LOGS = int(os.environ.get("PREMIUM_LOGS", "-1002067304488"))
+PREMIUM_LOGS = int(os.environ.get("PREMIUM_LOGS", ""))
 # -----------------------------------------------
-join = '<a href="https://t.me/+5YKxm5AsEzpkZDI1">✳️ JOIN BACKUP</a>'
+join = '<a href="https://t.me/+5YKxm5AuioffysEzpkZDI1">✳️ JOIN BACKUP</a>'
 # -----------------------------------------------
 UNSPLASH_ACCESS_KEY = 'RabDRmuXXBobanmwwbvpP5LwoG4J8ox34y5Sstz-9jk'
 # -----------------------------------------------
 UNSPLASH_QUERY = 'animal baby'
 # -----------------------------------------------
-ADMIN_BOT_USERNAME = "zhonsnowchatbbot" #without @
+ADMIN_BOT_USERNAME = "zhonsuoikkpnowchatbbot" #without @
 
 THUMB_URL = os.environ.get("THUMB_URL", "https://i.ibb.co/60W9WcdM/file-358.jpg")
 
